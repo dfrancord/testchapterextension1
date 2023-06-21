@@ -1,0 +1,39 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "65bf8f0e-868e-4f46-a066-0ecc6ae1a5bd",
+  "name": "cc-publishhtmlreport",
+  "friendlyName": "cc-publishhtmlreport",
+  "description": "Task de Prueba",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "dfrd",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 8
+  },
+  "instanceNameFormat": "cc-publishhtmlreport",
+  "inputs": [
+    {
+      "name": "htmlType",
+      "type": "string",
+      "label": "htmlType",
+      "defaultValue": "genericHTML",
+      "required": true,
+      "helpMarkDown": "Type of HTML to be published. Current options are Jmeter for Jmeter report or genericHTML for any other HTML"
+    },
+    {
+      "name": "htmlPath",
+      "type": "string",
+      "label": "htmlPath",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Needed only when htmlType is genericHTML. Not needed for Jmeter report publishing"
+    }
+  ],
+  "execution": {
+    "Node10": {
+      "target": "index.js"
+    }
+  }
+}

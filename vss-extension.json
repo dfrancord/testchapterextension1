@@ -1,0 +1,95 @@
+{
+  "manifestVersion": 1,
+  "id": "PublishHTMLCC",
+  "version": "0.1.9",
+  "name": "PublishHTMLCC",
+  "description": "An extension which lets you publish and visualize HTML reports(Like Jmeter load test reports) in Azure Devops as a seperate tab. ",
+  "publisher": "CustomerCare",
+  "public": false,
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/lakshaykaushik/PublishHTMLReport"
+  },
+  "screenshots": [
+    {
+      "path": "images/Sample7.png"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "overview.md"
+    },
+    "license": {
+      "path": "LICENSE"
+    }
+  },
+  "icons": {
+    "default": "images/Sample6.png"
+  },
+  "tags": [
+    "Build",
+    "Build Pipeline",
+    "HTML",
+    "HTML Reports"
+  ],
+  "scopes": [
+    "vso.build_execute"
+  ],
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "files": [
+    {
+      "path": "images",
+      "addressable": true
+    },
+    {
+      "path": "dist",
+      "addressable": true,
+      "packagePath": "scripts"
+    },
+    {
+      "path": "index.html",
+      "addressable": true
+    },
+    {
+      "path": "publishhtmlreport",
+      "addressable": true
+    },
+    {
+      "path": "node_modules/vss-web-extension-sdk/lib",
+      "addressable": true,
+      "packagePath": "lib"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "build-info-tab",
+      "type": "ms.vss-build-web.build-results-tab",
+      "description": "A tab contributing to build results view",
+      "targets": [
+        "ms.vss-build-web.build-results-view"
+      ],
+      "properties": {
+        "name": "Published HTML",
+        "uri": "index.html",
+        "supportsTasks": [ "65bf8f0e-868e-4f46-a066-0ecc6ae1a5bd" ]
+      }
+    },
+    {
+      "id": "cc-publishhtmlreport",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "publishhtmlreport"
+      }
+    }
+  ]
+}
